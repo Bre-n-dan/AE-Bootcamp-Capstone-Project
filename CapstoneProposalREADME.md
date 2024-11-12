@@ -4,11 +4,15 @@
    - ### **Overview**:
    Analyze stock market sentiment alongside real-time market data to gain insights into how news impacts stock performance.
    - ### **Problem Statement**:
-   Investors and analysts need tools to understand the effects of news sentiment on stock trends for informed decisions.
+   Investors and analysts need tools to understand the effects of news sentiment on stock trends for informed decisions, and to make greater returns.
    - ### **Project Scope**:
    Use Polygon’s market data and MarketAux's sentiment-tagged news data to model correlations between sentiment shifts and stock price changes.
    - ### **Target Audience / Stakeholders**:
    Traders, analysts, individual investors, and investment managers looking to integrate sentiment data into decisions.
+   - ### **Use Case**:
+   The use case of this data is for 1. an analytics table in a data warehouse, and 2. a dynamic Tableau dashboard served by the analytics table.
+   - ### **The Goal**:
+   The goal of this data model is to basically solve the problem of "should I let news and market sentiment dictate my investment decisions?". I.e. if sentiment is bad then sell the stock, if sentiment is good then buy the stock.
 
 ## 2. Tools and Technologies
    - ### **Data Collection**:
@@ -24,9 +28,9 @@
 
 ## 3. Conceptual Data Model
    - ### **Entities and Relationships**:
-   Core entities include `Stocks`, `NewsArticles`, `Sentiments`, and `Prices`, linked through ticker symbols.
+   Core entities include `stocks`, `sentiment_sources`, `sentiment_scores`, and `prices`, linked through ticker symbols.
    - ### **Schema Diagram**:
-   Show relationships where `Stocks` connect to `NewsArticles` via tickers, with `Sentiments` derived from articles.
+   Show relationships where `stocks` connect to `sentiment_sources` via tickers, with `sentiment_scores` derived from articles.
    - ### **Data Flow**:
    Ingest data via APIs, transform, and store, then analyze and visualize.
    - ### **Example Queries**:
@@ -48,3 +52,9 @@
    Sentiment-price correlation accuracy, processing efficiency, and dashboard usability.
    - ### **Outcomes**:
    A dashboard displaying real-time sentiment trends correlated with stock price changes, enabling actionable insights.
+
+
+
+## 6 Data Model
+   - ### **Link**:
+   ![DataModelImage](StockMarketSentimentPerformanceDataModel.png)
